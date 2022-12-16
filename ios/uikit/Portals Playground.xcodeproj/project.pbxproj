@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074DB461294CF365001F602A /* NativeHeaderPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DB460294CF365001F602A /* NativeHeaderPlugin.swift */; };
+		074DB465294CFD2A001F602A /* NativeHeaderPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 074DB464294CFD2A001F602A /* NativeHeaderPlugin.m */; };
 		07A5E83B294A26B20048EE1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5E83A294A26B20048EE1A /* AppDelegate.swift */; };
 		07A5E83D294A26B20048EE1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A5E83C294A26B20048EE1A /* SceneDelegate.swift */; };
 		07A5E842294A26B20048EE1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A5E840294A26B20048EE1A /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074DB45F294CF1C2001F602A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		074DB460294CF365001F602A /* NativeHeaderPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeHeaderPlugin.swift; sourceTree = "<group>"; };
+		074DB463294CFD29001F602A /* Portals Playground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Portals Playground-Bridging-Header.h"; sourceTree = "<group>"; };
+		074DB464294CFD2A001F602A /* NativeHeaderPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeHeaderPlugin.m; sourceTree = "<group>"; };
 		0797B64375AEEA73F6FB2F32 /* Pods-Portals Playground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Portals Playground.debug.xcconfig"; path = "Target Support Files/Pods-Portals Playground/Pods-Portals Playground.debug.xcconfig"; sourceTree = "<group>"; };
 		07A5E837294A26B20048EE1A /* Portals Playground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Portals Playground.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A5E83A294A26B20048EE1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +34,6 @@
 		07A5E848294A26B30048EE1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A5E84E294A498E0048EE1A /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		07A5E851294A49B50048EE1A /* PortalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalsViewController.swift; sourceTree = "<group>"; };
-		07A5E855294A4D900048EE1A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		0C55F2AD71870640802418DB /* Pods-Portals Playground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Portals Playground.release.xcconfig"; path = "Target Support Files/Pods-Portals Playground/Pods-Portals Playground.release.xcconfig"; sourceTree = "<group>"; };
 		EDA5FA14D7E1CBD31CB0130E /* Pods_Portals_Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Portals_Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,7 +78,10 @@
 				07A5E843294A26B30048EE1A /* Assets.xcassets */,
 				07A5E845294A26B30048EE1A /* LaunchScreen.storyboard */,
 				07A5E848294A26B30048EE1A /* Info.plist */,
-				07A5E855294A4D900048EE1A /* Config.xcconfig */,
+				074DB45F294CF1C2001F602A /* Config.xcconfig */,
+				074DB460294CF365001F602A /* NativeHeaderPlugin.swift */,
+				074DB464294CFD2A001F602A /* NativeHeaderPlugin.m */,
+				074DB463294CFD29001F602A /* Portals Playground-Bridging-Header.h */,
 			);
 			path = "Portals Playground";
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 				TargetAttributes = {
 					07A5E836294A26B20048EE1A = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -238,7 +247,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074DB465294CFD2A001F602A /* NativeHeaderPlugin.m in Sources */,
 				07A5E84F294A498E0048EE1A /* EntryViewController.swift in Sources */,
+				074DB461294CF365001F602A /* NativeHeaderPlugin.swift in Sources */,
 				07A5E852294A49B50048EE1A /* PortalsViewController.swift in Sources */,
 				07A5E83B294A26B20048EE1A /* AppDelegate.swift in Sources */,
 				07A5E83D294A26B20048EE1A /* SceneDelegate.swift in Sources */,
@@ -269,7 +280,7 @@
 /* Begin XCBuildConfiguration section */
 		07A5E849294A26B30048EE1A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07A5E855294A4D900048EE1A /* Config.xcconfig */;
+			baseConfigurationReference = 074DB45F294CF1C2001F602A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -330,7 +341,7 @@
 		};
 		07A5E84A294A26B30048EE1A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07A5E855294A4D900048EE1A /* Config.xcconfig */;
+			baseConfigurationReference = 074DB45F294CF1C2001F602A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -389,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YN2HU59K8;
@@ -407,6 +419,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.ionic.cs.portals.Portals-Playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Portals Playground/Portals Playground-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9YN2HU59K8;
@@ -436,6 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.ionic.cs.portals.Portals-Playground";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Portals Playground/Portals Playground-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

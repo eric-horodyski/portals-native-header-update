@@ -3,8 +3,8 @@ PODS:
     - CapacitorCordova
   - CapacitorCordova (4.6.1)
   - IonicLiveUpdates (0.2.2)
-  - IonicPortals (0.7.0):
-    - Capacitor (~> 4.4)
+  - IonicPortals (0.7.1):
+    - Capacitor (~> 4.6)
     - IonicLiveUpdates (< 0.3.0, >= 0.1.2)
 
 DEPENDENCIES:
@@ -22,7 +22,7 @@ SPEC CHECKSUMS:
   Capacitor: 822ec7c82735d613f4f84764950db00c8e7f5a5f
   CapacitorCordova: dd34553403e29eb8c0f746d9031b41f3e409f589
   IonicLiveUpdates: ab80edb1dae9cc474caf428b19cdbcfd65798f6e
-  IonicPortals: fd21c96f9088312fc8d7ace4583c0a5f4e2ed876
+  IonicPortals: 2677a7b97b0a46abf90f357687ef8425f129e2d0
 
 PODFILE CHECKSUM: 49bcf3921be2d206c788346dd47955f53f525d7c
 

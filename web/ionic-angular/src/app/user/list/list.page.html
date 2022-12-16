@@ -1,0 +1,31 @@
+<ion-content>
+  <div *ngIf="(users$ | async) as users">
+    <ion-list *ngIf="users.length; else loading">
+      <ion-item *ngFor="let user of users" [routerLink]="['/detail/', user.uuid]">
+        <ion-thumbnail slot="start">
+          <img alt="{{user.name.first}} {{user.name.last}}" [src]="user.picture.thumbnail" />
+        </ion-thumbnail>
+        <ion-label>
+          <h1>{{user.name.first}} {{user.name.last}}</h1>
+          <p>{{user.location.city}}, {{user.location.state}}, {{user.location.country}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  
+    <ng-template #loading>
+        <ion-item *ngFor="let x of [1,2,3,4,5]">
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h1>
+              <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+            </h1>
+            <p>
+              <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+    </ng-template>
+  </div>
+</ion-content>

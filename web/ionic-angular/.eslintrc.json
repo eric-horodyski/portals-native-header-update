@@ -5,7 +5,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.json"],
+        "project": ["web/ionic-angular/tsconfig.json"],
         "createDefaultProgram": true
       },
       "extends": [

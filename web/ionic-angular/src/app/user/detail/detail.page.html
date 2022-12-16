@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="hero-image" [ngStyle]="user && {'background-image': 'url(' + user.picture.large +')'}">
+  </div>
+  <ion-list *ngIf="user">
+    <ion-list-header>Name</ion-list-header>
+    <ion-item>
+      <ion-label>First:</ion-label>
+      <ion-label>{{user.name.first}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last:</ion-label>
+      <ion-label>{{user.name.last}}</ion-label>
+    </ion-item>
+    <ion-list-header>Location</ion-list-header>
+    <ion-item>
+      <ion-label>City:</ion-label>
+      <ion-label>{{user.location.city}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>State:</ion-label>
+      <ion-label>{{user.location.state}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Country:</ion-label>
+      <ion-label>{{user.location.country}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

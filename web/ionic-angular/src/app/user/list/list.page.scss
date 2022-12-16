@@ -1,0 +1,13 @@
+ion-thumbnail {
+  --border-radius: 8px;
+}
+
+ion-skeleton-text {
+  --border-radius: 8px;
+}
+
+h1 {
+  ion-skeleton-text {
+    height: 18px;
+  }
+}

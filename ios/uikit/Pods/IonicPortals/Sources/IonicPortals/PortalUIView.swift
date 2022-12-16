@@ -76,7 +76,22 @@ public class PortalUIView: UIView {
         init(portal: Portal, liveUpdatePath: URL?) {
             self.portal = portal
             self.liveUpdatePath = liveUpdatePath
-            super.init()
+            super.init(autoRegisterPlugins: portal.pluginRegistrationMode.isAutomatic)
+        }
+        
+        override func capacitorDidLoad() {
+            if case let .manual(plugins) = portal.pluginRegistrationMode {
+                bridge.registerPluginType(Plugin.self)
+
+                plugins.forEach { plugin in
+                    switch plugin {
+                    case .instance(let instance):
+                        bridge.registerPluginInstance(instance)
+                    case .type(let pluginType):
+                        bridge.registerPluginType(pluginType)
+                    }
+                }
+            }
         }
         
         required init?(coder: NSCoder) {
@@ -91,9 +106,19 @@ public class PortalUIView: UIView {
                 return InstanceDescriptor()
             }
             
-            let capConfigUrl = portal.bundle.url(forResource: "capacitor.config", withExtension: "json", subdirectory: portal.startDir)
-            let cordovaConfigUrl = portal.bundle.url(forResource: "config", withExtension: "xml", subdirectory: portal.startDir)
-            
+            var capConfigUrl = portal.bundle.url(forResource: "capacitor.config", withExtension: "json", subdirectory: portal.startDir)
+            var cordovaConfigUrl = portal.bundle.url(forResource: "config", withExtension: "xml", subdirectory: portal.startDir)
+
+            if let updatedCapConfig = liveUpdatePath?.appendingPathComponent("capacitor.config.json"),
+                FileManager.default.fileExists(atPath: updatedCapConfig.path) {
+                capConfigUrl = updatedCapConfig
+            }
+
+            if let updatedCordovaConfig = liveUpdatePath?.appendingPathComponent("config.xml"),
+               FileManager.default.fileExists(atPath: updatedCordovaConfig.path) {
+                cordovaConfigUrl = updatedCordovaConfig
+            }
+
             let descriptor = InstanceDescriptor(at: path, configuration: capConfigUrl, cordovaConfiguration: cordovaConfigUrl)
             descriptor.handleApplicationNotifications = false
             return descriptor
@@ -159,6 +184,3 @@ extension UIView {
         NSLayoutConstraint.activate(view.constraintsPinned(to: self))
     }
 }
-
-
-
